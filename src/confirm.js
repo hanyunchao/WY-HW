@@ -28,7 +28,7 @@ function confirm(message){
 
     if(Object.prototype.toString.call(message) === "[Object String]"){
 
-
+        // 空
     }
 
     let promise = new Promise((resolve,reject)=>{

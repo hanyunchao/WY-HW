@@ -10,15 +10,18 @@ class InputNumber extends React.Component {
     this.state = { value: this.props.value || this.props.defaultValue || '请输入内容' }
   }
 
+
+  // =====================================================================================
   // 最后一题
   async componentDidMount() {
     let res = await confirm("确定删除吗")
     if (res) {
-      console.log("是")
+      console.log("是的啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊")
     } else {
-      console.log("否")
+      console.log("否的啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊")
     }
   }
+  // ======================================================================================
 
   handle(e) {
     this.props.onChange()
@@ -33,7 +36,6 @@ class InputNumber extends React.Component {
 
 function App() {
   const [value, setValue] = useState('aaa')
-  // const value = 'hyc'
   return (
     <div>
 
