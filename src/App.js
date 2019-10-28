@@ -1,26 +1,34 @@
-import React from 'react';
+// import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class InputNumber extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {value: this.props.value || this.props.defaultValue || '请输入内容'}
+  }
+  handle(e){
+    this.props.onChange()
+    this.setState({
+      value:e.target.value
+    })
+  }
+  render(){
+    return (<input value={this.state.value} onChange={(e)=>{this.handle(e)}}></input>)
+  }
 }
+
+function App(){
+  const [value,setValue] = useState('aaa')
+  // const value = 'hyc'
+  return (
+      <div>
+      <InputNumber value={value} onChange={e=>{console.log(1)}}/>
+      <InputNumber defaultValue={value} onChange={e=>{}}/>
+      </div>
+  )
+}
+
 
 export default App;
